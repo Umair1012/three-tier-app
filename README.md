@@ -10,10 +10,10 @@ This is a full-stack three-tier web application built with:
 
 ## 📁 Folder Structure
 
-├── - backend # Express.js backend API
-├── - frontend # React frontend (served via Nginx)
-├── - docker-compose.yml
-└── - README.md
+├── backend/ # Express.js backend API
+├── frontend/ # React frontend (served via Nginx)
+├── docker-compose.yml # Docker Compose configuration file
+└── README.md # Project documentation
 
 ### 📥 Step 1: Clone the Repository
 - Fork the repository
@@ -43,14 +43,14 @@ This is a full-stack three-tier web application built with:
 - Go to Clusters > Connect > Connect your application
 - Choose driver: Node.js, version >= 3.6
 - Copy the URI:
-<pre><code>.env MONGO_URI="mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/three-tier-db?retryWrites=true&amp;w=majority" </code></pre>- 
+<pre><code> MONGO_URI="mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/three-tier-db?retryWrites=true&amp;w=majority" </code></pre>- 
 Replace <password> with your actual password.
 
 ## 6️⃣ Add Environment Variables
 - Create a .env file inside the backend/ folder:
 
 ### backend/.env
-<pre><code>.env MONGO_URI="mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/three-tier-db?retryWrites=true&amp;w=majority" </code></pre>
+<pre><code>MONGO_URI="mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/three-tier-db?retryWrites=true&amp;w=majority" </code></pre>
 
 ## 7️⃣ Run the Application
 ### Backend
