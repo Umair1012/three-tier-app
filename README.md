@@ -46,7 +46,7 @@ This is a full-stack three-tier web application built with:
 <pre>mongodb+srv://threeuser:<password>@three-tier-cluster.abcde.mongodb.net/?retryWrites=true&w=majority</pre>
 - Replace <password> with your actual password.
 
-### 6 Add Environment Variables
+## 6️⃣ Add Environment Variables
 - Create a .env file inside the backend/ folder:
 
 ### backend/.env
