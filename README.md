@@ -10,10 +10,10 @@ This is a full-stack three-tier web application built with:
 
 ## 📁 Folder Structure
 
-├── backend # Express.js backend API
-├── frontend # React frontend (served via Nginx)
-├── docker-compose.yml
-└── README.md
+├── - backend # Express.js backend API
+├── - frontend # React frontend (served via Nginx)
+├── - docker-compose.yml
+└── - README.md
 
 ### 📥 Step 1: Clone the Repository
 - Fork the repository
