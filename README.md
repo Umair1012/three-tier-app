@@ -43,15 +43,14 @@ This is a full-stack three-tier web application built with:
 - Go to Clusters > Connect > Connect your application
 - Choose driver: Node.js, version >= 3.6
 - Copy the URI:
-<pre>mongodb+srv://threeuser:<password>@three-tier-cluster.abcde.mongodb.net/?retryWrites=true&w=majority</pre>
-- Replace <password> with your actual password.
+<pre><code>.env MONGO_URI="mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/three-tier-db?retryWrites=true&amp;w=majority" </code></pre>- 
+Replace <password> with your actual password.
 
 ## 6️⃣ Add Environment Variables
 - Create a .env file inside the backend/ folder:
 
 ### backend/.env
-<pre>MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/three-tier-db?retryWrites=true&w=majority</pre>
-
+<pre><code>.env MONGO_URI="mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/three-tier-db?retryWrites=true&amp;w=majority" </code></pre>
 
 ## 7️⃣ Run the Application
 ### Backend
