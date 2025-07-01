@@ -16,7 +16,7 @@ This is a full-stack three-tier web application built with:
 └── README.md
 
 ### 📥 Step 1: Clone the Repository
-
+- Fork the repository
 - git clone https://github.com/<your-username>/<your-repo>.git
 - cd <your-repo>
 
@@ -53,7 +53,7 @@ This is a full-stack three-tier web application built with:
 <pre>MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/three-tier-db?retryWrites=true&w=majority</pre>
 
 
-### Run the Application
+## 7️⃣ Run the Application
 ### Backend
 <pre>cd backend
 node server.js</pre>
