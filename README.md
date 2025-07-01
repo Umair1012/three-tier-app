@@ -17,7 +17,7 @@ This is a full-stack three-tier web application built with:
 
 ### 📥 Step 1: Clone the Repository
 - Fork the repository
-  <pre>git clone https://github.com/<your-username>/<your-repo>.git </pre>
+<pre> git clone https://github.com/&lt;your-username&gt;/&lt;your-repo&gt;.git </pre>
 - cd your-repo
 
 # MongoDB Atlas
