@@ -5,6 +5,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
         BRANCH_NAME = "${env.BRANCH_NAME}"
         IMAGE_TAG   = "${BRANCH_NAME}-${BUILD_NUMBER}"
+        DOCKERHUB_USER = 'misacademy'
     }
 
     stages {
