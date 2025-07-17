@@ -1,4 +1,4 @@
-# 🧱 Three-Tier MERN Application 1
+# 🧱 Three-Tier MERN Application
 
 This is a full-stack three-tier web application built with:
 
