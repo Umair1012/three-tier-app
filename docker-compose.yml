@@ -17,7 +17,7 @@ services:
       retries: 3
 
   backend:
-    image: 750067408510.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-backend:latest
+    image: ${BACKEND_IMAGE}
     container_name: backend
     ports:
       - "5000:5000"
@@ -37,7 +37,7 @@ services:
 
 
   frontend:
-    image: 750067408510.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-frontend:latest
+    image: ${FRONTEND_IMAGE}
     container_name: frontend
     ports:
       - "3000:3000"
