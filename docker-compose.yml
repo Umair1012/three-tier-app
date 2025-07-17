@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   database:
-    image: mongo-3
-    container_name: mongo
+    image: mongo
+    container_name: mongo-3
     ports:
       - "27017:27017"
     volumes:
