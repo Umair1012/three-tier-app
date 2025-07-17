@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
+        DOCKERHUB_CREDENTIALS_ID = 'dockerhub_credentials'
         BRANCH_NAME = "${env.BRANCH_NAME}"
         IMAGE_TAG   = "${BRANCH_NAME}-${BUILD_NUMBER}"
         DOCKERHUB_USER = 'misacademy'
@@ -54,9 +54,12 @@ pipeline {
         stage('Prepare .env for Compose') {
             steps {
                 script {
-                    writeFile file: '.env', text: """BACKEND_IMAGE=${BACKEND_TAG_DH}
-FRONTEND_IMAGE=${FRONTEND_TAG_DH}
-"""
+                    writeFile 
+                    file: '.env', 
+                    text: """
+                    BACKEND_IMAGE=${BACKEND_TAG_DH}
+                    FRONTEND_IMAGE=${FRONTEND_TAG_DH}
+                    """
                 }
             }
         }
@@ -77,7 +80,7 @@ FRONTEND_IMAGE=${FRONTEND_TAG_DH}
             steps {
                 sh """
                     docker-compose --env-file .env down
-  				docker-compose --env-file .env pull
+  				    docker-compose --env-file .env pull
                     docker-compose --env-file .env up -d --remove-orphans
                 """
             }
