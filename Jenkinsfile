@@ -64,12 +64,13 @@ pipeline {
             }
         }
 
-        stage('Approval for Staging / Prod Deploy') {
-            when {
+         stage('Approval (Stg/Prod Only)') {
+            when { anyOf { branch 'stg'; branch 'prod' } }
             steps {
-                input message: "Deploy to ${BRANCH_NAME} environment?", ok: "Yes, Deploy"
+                input message: "Deploy to ${BRANCH_NAME}?", ok: "Deploy"
             }
         }
+
 
         stage('Deploy Environment') {
             steps {
