@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+     agent { label 'ec2-stg' } 
 
     environment {
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub_credentials'
@@ -66,11 +66,6 @@ pipeline {
 
         stage('Approval for Staging / Prod Deploy') {
             when {
-                anyOf {
-                    branch 'stg'
-                    branch 'prod'
-                }
-            }
             steps {
                 input message: "Deploy to ${BRANCH_NAME} environment?", ok: "Yes, Deploy"
             }
