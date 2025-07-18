@@ -11,7 +11,7 @@ pipeline {
 
     options {
         skipStagesAfterUnstable()
-        ansiColor('xterm')
+
     }
 
     stages {
