@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'CHANGE_ME_AGENT' }  // agent-dev | agent-stg | agent-prod
+    agent { label 'ec2-dev' }  // agent-dev | agent-stg | agent-prod
 
     environment {
         DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
