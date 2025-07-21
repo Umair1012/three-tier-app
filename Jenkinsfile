@@ -4,13 +4,13 @@ pipeline {
 
     environment {
         IMAGE_TAG    = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
-        COMPOSE_FILE = "docker-compose.${env.BRANCH_NAME}.yml"
+        COMPOSE_FILE = "docker-compose.yml"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkoutSource()
             }
         }
         stage('Docker Login') {
@@ -36,9 +36,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    if (env.BRANCH_NAME == 'stg' || env.BRANCH_NAME == 'prod') {
-                        input message: "Deploy to ${env.BRANCH_NAME}?", ok: "Deploy"
-                    }
                     deployApp(COMPOSE_FILE, env.BRANCH_NAME)
                 }
             }
