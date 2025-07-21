@@ -1,6 +1,6 @@
 @Library('sharedLib') _
 pipeline {
-    agent { label "agent-${env.BRANCH_NAME}" }
+    agent any
 
     environment {
         IMAGE_TAG    = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
