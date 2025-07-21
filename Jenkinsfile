@@ -3,6 +3,7 @@ pipeline {
     agent any
 
     environment {
+        BRANCH_NAME = 'main'
         IMAGE_TAG    = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
         COMPOSE_FILE = "docker-compose.yml"
     }
