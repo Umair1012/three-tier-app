@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkoutSource()
+                checkout scm
             }
         }
         stage('Docker Login') {
