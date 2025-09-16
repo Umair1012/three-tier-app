@@ -15,10 +15,12 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: misacademy/frontend:v1
+        image: misacademy/frontend:v3
         ports:
         - containerPort: 3000
         env:
-        - name: BACKEND_URL
-          value: "http://backend-service.backend.svc.cluster.local:5000"
-
+            - name: BACKEND_IP_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: frontend-config          # name of your ConfigMap
+                  key: REACT_APP_API_BASE_URL    # specific key in ConfigMap

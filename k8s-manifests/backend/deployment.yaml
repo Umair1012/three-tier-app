@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: misacademy/three-tier:v1
+        image: misacademy/backend:v3
         ports:
         - containerPort: 5000
         env:
