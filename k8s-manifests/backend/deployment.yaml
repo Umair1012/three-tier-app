@@ -18,11 +18,36 @@ spec:
         image: misacademy/backend:v3
         ports:
         - containerPort: 5000
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+        livenessProbe:
+          httpGet:
+            path: /api/items
+            port: 5000
+          initialDelaySeconds: 15   # wait before first probe after container starts
+          periodSeconds: 20         # check every 20s
+          timeoutSeconds: 5         # fail probe if no response in 5s
+          failureThreshold: 3       # after 3 failures, restart the container
+
+        readinessProbe:
+          httpGet:
+            path: /api/items
+            port: 5000
+          initialDelaySeconds: 10   # wait before first probe
+          periodSeconds: 15         # check every 15s
+          timeoutSeconds: 5         # fail probe if no response in 5s
+          failureThreshold: 3       # after 3 failures, mark pod not ready
+
         env:
         - name: MONGO_URI
           valueFrom:
             secretKeyRef:
               name: mongo-secret
               key: MONGO_URI
-
 
