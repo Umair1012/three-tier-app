@@ -50,4 +50,9 @@ spec:
             secretKeyRef:
               name: mongo-secret
               key: MONGO_URI
+        - name: BACKEND_DB
+          valueFrom:
+            configMapKeyRef:
+              name: backend-config
+              key: REACT_APP_API_BASE_URL
 
